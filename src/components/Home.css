@@ -29,6 +29,13 @@
     text-align: center;
     color: white;
     gap: 8px;
+    transform: translateY(-30px);
+}
+
+.hero-logo {
+  width: clamp(100px, 100vw, 160px);
+  height: auto;
+  margin-bottom: 40px;
 }
 
 .slider {

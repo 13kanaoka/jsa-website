@@ -1,4 +1,5 @@
 import './Home.css'
+import jsaLogo from '../assets/jsa-logo.png'
 import photo1 from '../assets/slider/1_undoukai.png'
 import photo2 from '../assets/slider/2_karaoke.png'
 import photo3 from '../assets/slider/3_calligraphy.jpg'
@@ -6,7 +7,7 @@ import photo4 from '../assets/slider/4_party.jpg'
 
 import { useState, useEffect } from 'react'
 
-const SLIDES = [photo1, photo2, photo3, photo4]
+const SLIDES = [photo1, photo2, photo4, photo3]
 
 function Home() {
     return (
@@ -22,6 +23,7 @@ function Home() {
                 </div>
                 <div className="overlay"></div>
                 <div className="hero-text">
+                    <img src={jsaLogo} alt="JSA logo" className="hero-logo" />
                     <h2>日  本  人  学  生  会</h2>
                     <h1>Japanese Student Association</h1>
                     <p>at California State University, Northridge</p>
