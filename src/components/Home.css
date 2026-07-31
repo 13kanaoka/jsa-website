@@ -1,0 +1,16 @@
+.hero {
+    position: relative;
+    height: 80vh;
+    background: gray;
+}
+
+.hero-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
