@@ -1,0 +1,22 @@
+.site-header {
+    background: var(--jsa-red);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+}
+
+.tabs {
+    display: flex;
+    gap: 20px;
+}
+
+.tabs a {
+    color: White;
+    text-decoration: none;
+}
+
+.logo {
+    height: 90px;
+    width: auto;
+}
