@@ -12,7 +12,7 @@
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
   --jsa-red: #bc002d;
 
-  --sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --sans: 'Zen Antique', sans-serif;
   --heading: 'Graduate', sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
@@ -110,6 +110,18 @@ code {
 
 .graduate-regular {
   font-family: "Graduate", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.hina-mincho-regular {
+  font-family: "Hina Mincho", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.zen-antique-regular {
+  font-family: "Zen Antique", serif;
   font-weight: 400;
   font-style: normal;
 }

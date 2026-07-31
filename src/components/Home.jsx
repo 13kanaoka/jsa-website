@@ -22,9 +22,9 @@ function Home() {
                 </div>
                 <div className="overlay"></div>
                 <div className="hero-text">
-                    <h2>日 本 人 学 生 会</h2>
+                    <h2>日  本  人  学  生  会</h2>
                     <h1>Japanese Student Association</h1>
-                    <p>California State University, Northridge</p>
+                    <p>at California State University, Northridge</p>
                 </div>
             </div>
         </section>

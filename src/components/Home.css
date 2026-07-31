@@ -1,6 +1,6 @@
 .hero {
     position: relative;
-    height: 80vh;
+    height: 85vh;
     background: gray;
 }
 
@@ -9,9 +9,14 @@
     margin: 0;
 }
 
+.hero-text h2 {
+  font-family: 'Hina Mincho', sans-serif;
+  font-size: 42px;
+}
+
 .hero-text p {
     color: rgba(255,255,255,0.75);
-    font-family: 'Graduate', sans-serif;
+    font-family: 'Zen Antique', sans-serif;
 }
 
 .hero-text {
