@@ -4,7 +4,9 @@ import './Header.css'
 function Header() {
     return (
         <header className="site-header">
-            <img src={jsaLogo} alt="JSA logo" className="logo" />
+            <a href="#home" className="brand">
+                <img src={jsaLogo} alt="JSA logo" className="logo" />
+            </a>
 
             <nav className="tabs">
                 <a href="#home">Home</a>
