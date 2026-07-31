@@ -13,6 +13,7 @@ function Header() {
                 <a href="#about">About</a>
                 <a href="#join">Join</a>
                 <a href="#calendar">Calendar</a>
+                <a href="#faq">FAQ</a>
                 <a href="#contact">Contact</a>
             </nav>
         </header>

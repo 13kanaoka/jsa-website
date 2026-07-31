@@ -4,6 +4,16 @@
     background: gray;
 }
 
+.hero-text h1,
+.hero-text h2 {
+    margin: 0;
+}
+
+.hero-text p {
+    color: rgba(255,255,255,0.75);
+    font-family: 'Graduate', sans-serif;
+}
+
 .hero-text {
     position: absolute;
     inset: 0;
@@ -13,4 +23,36 @@
     align-items: center;
     text-align: center;
     color: white;
+    gap: 8px;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  height: 100%;
+  width: max-content;
+  animation: conveyor 30s linear infinite;
+}
+
+.slide {
+  flex: 0 0 auto;
+  width: 70vw;
+  height: 100%;
+  object-fit: cover;
+}
+
+@keyframes conveyor {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
 }
