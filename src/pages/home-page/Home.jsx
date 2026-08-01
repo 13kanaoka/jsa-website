@@ -1,9 +1,9 @@
 import './Home.css'
-import jsaLogo from '../assets/jsa-logo.png'
-import photo1 from '../assets/slider/1_undoukai.png'
-import photo2 from '../assets/slider/2_karaoke.png'
-import photo3 from '../assets/slider/3_calligraphy.jpg'
-import photo4 from '../assets/slider/4_party.jpg'
+import jsaLogo from '../../assets/jsa-logo.png'
+import photo1 from '../../assets/slider/1_undoukai.png'
+import photo2 from '../../assets/slider/2_karaoke.png'
+import photo3 from '../../assets/slider/3_calligraphy.jpg'
+import photo4 from '../../assets/slider/4_party.jpg'
 
 import { useState, useEffect } from 'react'
 
