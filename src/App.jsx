@@ -1,6 +1,6 @@
 import Header from './components/Header'
-import Home from './components/Home'
-import About from './components/About'
+import Home from './pages/home-page/Home'
+import About from './pages/about-page/About'
 
 function App() {
   return <>
