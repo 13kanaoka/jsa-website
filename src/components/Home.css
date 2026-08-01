@@ -33,7 +33,7 @@
 }
 
 .hero-logo {
-  width: clamp(100px, 100vw, 160px);
+  width: clamp(100px, 100vw, 180px);
   height: auto;
   margin-bottom: 40px;
 }
