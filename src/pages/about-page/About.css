@@ -1,26 +1,13 @@
 .about {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 24px 24px;
+    background: var(--bg);
 }
 
-.about-intro {
-    text-align: center;
-    margin-bottom: 48px;
+.about-header {
+    padding: 40px 40px;
+    background: var(--jsa-red);
 }
 
-.about-intro h2 {
-    font-family: 'Zen Antique', sans-serif;
-}
-
-.about-body p {
-    margin-bottom: 20px;
-    line-height: 1.6;
-    color: white;
-}
-
-.about-note {
-    margin-top: 40px;
-    font-style: italic;
-    color: var(--text)
+.about-header h1 {
+    text-align: left;
+    margin: 0;
 }
