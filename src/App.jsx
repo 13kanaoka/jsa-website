@@ -9,6 +9,7 @@ function App() {
     <Header />
     <Home />
     <About />
+    <Analytics />
   </>
 }
 
