@@ -1,21 +1,18 @@
 import jsaLogo from '../assets/jsa-logo.png'
+import { useLang } from '../i18n/LanguageContext'
+import LangToggle from './LangToggle'
 import './Header.css'
 
 function Header() {
+    const { t } = useLang()
+
     return (
         <header className="site-header">
             <a href="#home" className="brand">
-                <img src={jsaLogo} alt="JSA logo" className="logo" />
+                <img src={jsaLogo} alt={t('header.logoAlt')} className="logo" />
             </a>
 
-            <nav className="tabs">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#join">Join</a>
-                <a href="#calendar">Calendar</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
-            </nav>
+            <LangToggle />
         </header>
     )
 }

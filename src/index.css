@@ -126,8 +126,29 @@ code {
   font-style: normal;
 }
 
-.zen-kaku-gothic-new-regular {
-  font-family: "Zen Kaku Gothic New", sans-serif;
+.sawarabi-gothic-regular {
+  font-family: "Sawarabi Gothic", sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+/* --- Japanese text renders in gothic --- */
+:root:lang(ja) {
+  font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+:root:lang(ja) h1,
+:root:lang(ja) h2 {
+  font-family: 'Sawarabi Gothic', sans-serif;
+}
+
+/* ...except the hero, which keeps its designed fonts in both languages */
+:root:lang(ja) .hero-text h1 {
+  font-family: var(--heading);
+}
+:root:lang(ja) .hero-text h2 {
+  font-family: 'Hina Mincho', sans-serif;
+}
+:root:lang(ja) .hero-text p {
+  font-family: 'Zen Antique', sans-serif;
 }
