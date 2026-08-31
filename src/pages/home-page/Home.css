@@ -1,70 +1,149 @@
-.hero {
-    position: relative;
-    height: 92vh;
-    background: gray;
+.home {
+  position: relative;
+  min-height: 84svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #0b0609; /* shows through below the wall / behind the scrim */
+  isolation: isolate;
 }
 
-.hero-text h1,
-.hero-text h2 {
-    margin: 0;
-}
-
-.hero-text h2 {
-  font-family: 'Hina Mincho', sans-serif;
-  font-size: 42px;
-}
-
-.hero-text p {
-    color: rgba(255,255,255,0.75);
-    font-family: 'Zen Antique', sans-serif;
-}
-
-.hero-text {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: white;
-    gap: 8px;
-    transform: translateY(-30px);
-}
-
-.hero-logo {
-  width: clamp(100px, 100vw, 170px);
-  height: auto;
-  margin-bottom: 40px;
-}
-
-.slider {
+/* --- dense photo wall --- */
+.home-collage {
   position: absolute;
   inset: 0;
-  overflow: hidden;
+  z-index: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(94px, 11vw, 148px), 1fr));
+  grid-auto-rows: clamp(94px, 11vw, 148px);
+  grid-auto-flow: dense;
+  gap: 3px;
+  /* unify the mismatched photos and push the whole wall back (kept sharp) */
+  filter: saturate(0.9) brightness(0.9) contrast(1.02);
 }
-
-.slider-track {
-  display: flex;
-  height: 100%;
-  width: max-content;
-  animation: conveyor 35s linear infinite;
-}
-
-.slide {
-  flex: 0 0 auto;
-  width: 80vw;
+.home-collage img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
+}
+/* tile shapes are assigned per photo by aspect ratio in Home.jsx;
+   grid-auto-flow: dense backfills the gaps the bigger tiles leave */
+.home-collage img.tile-2x2 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.home-collage img.tile-2x1 {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+.home-collage img.tile-1x2 {
+  grid-column: span 1;
+  grid-row: span 2;
 }
 
-@keyframes conveyor {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+/* --- scrim: darker where the wordmark sits, dark at the edges, faint brand tint --- */
+.home-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse 82% 70% at 50% 45%,
+      rgba(6, 3, 6, 0.18) 0%,
+      rgba(6, 3, 6, 0.38) 56%,
+      rgba(6, 3, 6, 0.64) 100%),
+    linear-gradient(180deg, rgba(157, 0, 37, 0.1), rgba(0, 0, 0, 0.2));
 }
 
-.overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.45);
+/* --- wordmark --- */
+.home-inner {
+  position: relative;
+  z-index: 2;
+  max-width: min(92vw, 980px);
+  padding: 56px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+.home-logo {
+  width: clamp(96px, 15vw, 148px);
+  height: auto;
+  margin-bottom: 30px;
+  /* stacked drop-shadows hug the logo silhouette -> soft dark halo */
+  filter:
+    drop-shadow(0 0 3px rgba(0, 0, 0, 0.6))
+    drop-shadow(0 0 12px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 4px 16px rgba(0, 0, 0, 0.5));
+}
+.home-kanji {
+  margin: 0;
+  font-family: 'Hina Mincho', serif;
+  font-weight: 400;
+  font-size: clamp(27px, 5vw, 44px);
+  letter-spacing: 0.12em;
+  color: #fff;
+  text-shadow:
+    0 0 3px rgba(0, 0, 0, 0.88),
+    0 0 9px rgba(0, 0, 0, 0.7),
+    0 0 22px rgba(0, 0, 0, 0.5),
+    0 1px 3px rgba(0, 0, 0, 0.85);
+}
+.home-title {
+  margin: 12px 0 0;
+  font-family: var(--heading);
+  font-weight: 500;
+  font-size: clamp(28px, 6vw, 58px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-shadow:
+    0 0 4px rgba(0, 0, 0, 0.88),
+    0 0 12px rgba(0, 0, 0, 0.72),
+    0 0 30px rgba(0, 0, 0, 0.52),
+    0 2px 4px rgba(0, 0, 0, 0.85);
+  white-space: nowrap; /* one line on desktop; wraps below 560px (see media query) */
+}
+.home-tagline {
+  margin: 20px 0 0;
+  font-family: 'Zen Antique', serif;
+  font-size: clamp(13px, 1.6vw, 17px);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow:
+    0 0 3px rgba(0, 0, 0, 0.9),
+    0 0 8px rgba(0, 0, 0, 0.72),
+    0 1px 3px rgba(0, 0, 0, 0.85);
+}
+
+/* keep the hero's own fonts in Japanese (the global :lang(ja) rule would otherwise
+   swap headings to Sawarabi Gothic and the body font to gothic) */
+:root:lang(ja) .home-kanji {
+  font-family: 'Hina Mincho', serif;
+}
+:root:lang(ja) .home-title {
+  font-family: var(--heading);
+}
+:root:lang(ja) .home-tagline {
+  font-family: 'Zen Antique', serif;
+}
+
+@media (max-width: 560px) {
+  .home-collage {
+    grid-template-columns: repeat(auto-fill, minmax(84px, 1fr));
+    grid-auto-rows: 84px;
+    gap: 2px;
+  }
+  .home-collage img.tile-2x2 {
+    /* no half-screen tiles on phones; keep the 2x1 / 1x2 rhythm */
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .home-inner {
+    padding: 44px 20px;
+  }
+  .home-title {
+    white-space: normal;
+  }
 }
