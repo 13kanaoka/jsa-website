@@ -131,10 +131,14 @@
 
 @media (max-width: 620px) {
   .home-collage {
+    /* dense, uniform grid on phones — no oversized tiles */
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 25vw;
     gap: 2px;
   }
-  .home-collage img.tile-2x2 {
-    /* no half-screen tiles on phones; keep the 2x1 / 1x2 rhythm */
+  .home-collage img.tile-2x2,
+  .home-collage img.tile-2x1,
+  .home-collage img.tile-1x2 {
     grid-column: auto;
     grid-row: auto;
   }
