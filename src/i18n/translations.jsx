@@ -30,7 +30,7 @@ export const translations = {
       error: 'Something went wrong — double-check your details and try again.',
       errorDuplicate: 'That email is already on the list.',
       payTitle: 'Membership fee — $15 / semester',
-      payNote: 'Payment opens after our first General Meeting. Sign up now and we’ll follow up about the $15 then.',
+      payNote: 'Payment opens after our first General Meeting. Sign up now and we\'ll follow up about the $15 then.',
       officerTitle: 'Board Officer Application',
       officerNote: 'Currently unavailable — check back in December!',
     },
