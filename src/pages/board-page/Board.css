@@ -1,9 +1,6 @@
 .board {
   background: var(--bg);
   padding: 56px 24px 72px;
-  /* soft edges, a hair off the background; theme-aware */
-  --card-edge: color-mix(in srgb, var(--text-h) 11%, transparent);
-  --name-edge: color-mix(in srgb, var(--text-h) 20%, transparent);
 }
 
 /* ---- title + inline term dropdown ---- */

@@ -1,0 +1,53 @@
+.faq {
+  background: var(--bg);
+  padding: 56px 24px 72px;
+}
+
+.faq-title {
+  text-align: center;
+  margin: 0 auto 36px;
+  font-family: var(--heading);
+  color: var(--text-h);
+  font-size: clamp(24px, 6vw, 40px);
+  line-height: 1.15;
+}
+
+/* gray boxes that fill their width and wrap onto new lines, like the board grid */
+.faq-grid {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1120px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.faq-card {
+  box-sizing: border-box;
+  flex: 1 1 300px;
+  max-width: 440px;
+  background: var(--card-edge);
+  border-radius: 14px;
+  padding: 18px 20px 20px;
+}
+
+.faq-q {
+  margin: 0 0 8px;
+  color: var(--text-h);
+  font-weight: 600;
+  font-size: clamp(15px, 2.4vw, 17px);
+  line-height: 1.3;
+}
+
+.faq-a {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(13px, 2.2vw, 15px);
+  line-height: 1.6;
+}
+.faq-a em {
+  font-style: italic;
+  color: var(--text-h);
+}
