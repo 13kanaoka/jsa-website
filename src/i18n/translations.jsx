@@ -40,7 +40,7 @@ export const translations = {
       storyTitle: 'How we got here',
       story: [
         {
-          heading: 'Before it had a name',
+          heading: 'A Community',
           body: 'Long before JSA was an official club, Mr. Misumi — a CSUN staff member — made a point of checking in on the Japanese exchange students on campus. The care he and his wife showed students far from home is still at the heart of JSA today.',
         },
         {
@@ -76,7 +76,7 @@ export const translations = {
         },
         {
           q: 'Do I need to pay to be a member?',
-          a: 'We have a per-semester membership fee of $15. This money *never* goes to the board — it is entirely so we can fund our events and give you awesome activities, free food, and the resources to give back to our members as much as possible.',
+          a: 'We have a per-semester membership fee of $15. This money *never* goes to any board members — it is entirely so we can fund our events and give you awesome activities, free food, and the resources to give back to our members as much as possible.',
         },
         {
           q: 'How often do you hold events?',
