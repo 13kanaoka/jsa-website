@@ -1,0 +1,147 @@
+.membership {
+  background: var(--bg);
+  padding: 60px 24px 76px;
+  border-top: 5px solid var(--jsa-red);
+}
+
+.mem-title {
+  text-align: center;
+  margin: 0 auto 40px;
+  font-family: var(--heading);
+  color: var(--text-h);
+  font-size: clamp(24px, 6vw, 40px);
+  line-height: 1.15;
+}
+
+.mem-grid {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.mem-card {
+  box-sizing: border-box;
+  flex: 1 1 380px;
+  max-width: 520px;
+  background: var(--card-edge);
+  border-radius: 16px;
+  padding: 28px 26px;
+}
+.mem-card--muted {
+  flex: 1 1 280px;
+  max-width: 380px;
+}
+
+.mem-card h3 {
+  margin: 0 0 16px;
+  font-family: var(--heading);
+  color: var(--text-h);
+  font-size: clamp(17px, 2.8vw, 21px);
+  line-height: 1.2;
+}
+
+.mem-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.mem-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  color: var(--text);
+}
+.mem-form input {
+  font: inherit;
+  font-size: 15px;
+  text-transform: none;
+  letter-spacing: normal;
+  color: var(--text-h);
+  background: color-mix(in srgb, var(--text-h) 6%, transparent);
+  border: 1px solid var(--name-edge);
+  border-radius: 9px;
+  padding: 10px 12px;
+}
+.mem-form input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+.mem-form button {
+  margin-top: 4px;
+  font: inherit;
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  background: var(--jsa-red);
+  border: 0;
+  border-radius: 9px;
+  padding: 11px 16px;
+  cursor: pointer;
+}
+.mem-form button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* honeypot — in the DOM, gone from view */
+.mem-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.mem-done {
+  margin: 6px 0 0;
+  color: var(--text-h);
+  font-size: clamp(14px, 2.4vw, 16px);
+  line-height: 1.5;
+}
+.mem-error {
+  margin: 2px 0 0;
+  color: #ff6b6b;
+  font-size: 13px;
+}
+
+.mem-pay-locked {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--name-edge);
+}
+.mem-pay-badge {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--text-h) 8%, transparent);
+  color: var(--text-h);
+  font-size: 13px;
+  font-weight: 600;
+}
+.mem-pay-locked p {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(12px, 2vw, 14px);
+  line-height: 1.55;
+}
+
+.mem-card--muted p {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(13px, 2.2vw, 15px);
+  line-height: 1.5;
+}
+
+/* JA: Latin-only display font falls back to the gothic */
+:root:lang(ja) .mem-title,
+:root:lang(ja) .mem-card h3 {
+  font-family: 'Sawarabi Gothic', sans-serif;
+}

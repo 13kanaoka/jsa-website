@@ -1,6 +1,7 @@
 .faq {
   background: var(--bg);
   padding: 56px 24px 72px;
+  border-top: 5px solid var(--jsa-red);
 }
 
 .faq-title {
