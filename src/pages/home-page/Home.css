@@ -137,13 +137,19 @@
     gap: 2px;
   }
   .home-collage img {
-    /* each tile is a square as wide as its column; cover crops the photo to fit */
+    /* each tile's height comes from its own box (aspect-ratio), never grid-auto-rows */
     aspect-ratio: 1 / 1;
     height: auto;
   }
+  .home-collage img.tile-2x1 {
+    /* wide tile: 2 columns, but 2/1 ratio keeps it exactly one row tall */
+    aspect-ratio: 2 / 1;
+    grid-column: span 2;
+    grid-row: auto;
+  }
   .home-collage img.tile-2x2,
-  .home-collage img.tile-2x1,
   .home-collage img.tile-1x2 {
+    /* these need row-spanning to pack cleanly — keep them 1x1 on phones */
     grid-column: auto;
     grid-row: auto;
   }
