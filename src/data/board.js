@@ -20,7 +20,8 @@ const photos = import.meta.glob(
 
 const KNOWN_POSITIONS = [
   'president', 'vp', 'secretary', 'treasurer', 'public-relations',
-  'marketing', 'graphic-designer', 'content-creator', 'media', 'photography',
+  'marketing', 'graphic-designer', 'content-creator', 'content-creation',
+  'media', 'photography',
   'event-logistics', 'event-planner', 'event-coordinator', 'advisor',
 ]
 
@@ -72,6 +73,19 @@ const RAW = [
         funFactEn: 'Favorite movie: Ratatouille.', funFactJa: '好きな映画：レミーのおいしいレストラン。' },
       { file: 'alisa-content-creator.jpg', nameJa: '有紗',
         funFactEn: 'Does not like photos.', funFactJa: '写真が苦手。' },
+    ],
+  },
+  {
+    id: 'spring24', season: 'spring', year: 2024,
+    members: [
+      { file: 'riko-yoshida-president.jpg', nameJa: '吉田 リコ' },
+      { file: 'ivan-jarquin-vp.jpg', nameJa: 'ハルキン アイヴァン' },
+      { file: 'yukako-nomura-secretary.jpg', nameJa: '野村 由香子' },
+      { file: 'cole-treasurer.jpg', nameJa: 'コール' },
+      { file: 'smruti-event-planner.jpg', nameJa: 'スムルティ' },
+      { file: 'toma-murase-event-planner.jpg', nameJa: '刀麻' },
+      { file: 'matt-rohde-public-relations.jpg', nameJa: 'ローディー 眞杜' },
+      { file: 'vincenzo-escobar-content-creation.jpg', nameJa: 'エスコバル ヴィンチェンツォ' },
     ],
   },
   {

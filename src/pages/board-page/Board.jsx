@@ -5,7 +5,7 @@ import { board } from '../../data/board'
 
 const POSITION_ORDER = [
   'president', 'vp', 'secretary', 'treasurer',
-  'public-relations', 'marketing', 'graphic-designer', 'content-creator',
+  'public-relations', 'marketing', 'graphic-designer', 'content-creator', 'content-creation',
   'media', 'photography',
   'event-logistics', 'event-planner', 'event-coordinator',
   'advisor',
