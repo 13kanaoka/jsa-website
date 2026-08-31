@@ -14,7 +14,7 @@ function Membership() {
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [company, setCompany] = useState('') // honeypot
-  const [status, setStatus] = useState('idle') // idle | submitting | success | error
+  const [status, setStatus] = useState('idle') // idle | submitting | success | duplicate | error
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -29,17 +29,19 @@ function Membership() {
 
     setStatus('submitting')
     try {
-      await fetch(SIGNUP_URL, {
+      // A form-encoded POST is a "simple" request (no CORS preflight). Apps Script
+      // redirects to script.googleusercontent.com, whose response IS readable
+      // cross-origin, so we can act on the { ok, error } it sends back.
+      const res = await fetch(SIGNUP_URL, {
         method: 'POST',
-        // Apps Script sends no CORS headers, so the reply can't be read from
-        // another domain. no-cors = send it, don't read back; the body must be
-        // form-encoded for a "simple" request.
-        mode: 'no-cors',
         body: new URLSearchParams({ fullName: name, email: mail }),
       })
-      setStatus('success')
+      const data = await res.json()
+      if (data.ok) setStatus('success')
+      else if (data.error === 'duplicate') setStatus('duplicate')
+      else setStatus('error')
     } catch {
-      setStatus('error') // only if the request couldn't be sent at all
+      setStatus('error') // couldn't send, or couldn't read the reply
     }
   }
 
@@ -94,6 +96,9 @@ function Membership() {
               </button>
 
               {status === 'error' && <p className="mem-error">{t('membership.error')}</p>}
+              {status === 'duplicate' && (
+                <p className="mem-error">{t('membership.errorDuplicate')}</p>
+              )}
             </form>
           )}
 
