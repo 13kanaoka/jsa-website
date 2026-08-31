@@ -1,0 +1,190 @@
+.about {
+  background: var(--bg);
+  padding: 60px 24px 76px;
+  border-top: 5px solid var(--jsa-red);
+}
+
+/* --- title + opening statement --- */
+.about-title {
+  text-align: center;
+  margin: 0 auto 12px;
+  font-family: var(--heading);
+  color: var(--text-h);
+  font-size: clamp(24px, 6vw, 40px);
+  line-height: 1.15;
+}
+.about-lede {
+  max-width: 620px;
+  margin: 0 auto 56px;
+  text-align: center;
+  color: var(--text);
+  font-size: clamp(15px, 2.6vw, 20px);
+  line-height: 1.5;
+}
+
+.about-subhead {
+  text-align: center;
+  margin: 0 auto 26px;
+  font-family: var(--heading);
+  color: var(--text-h);
+  font-size: clamp(19px, 4vw, 27px);
+}
+
+/* --- story timeline --- */
+.about-timeline {
+  list-style: none;
+  margin: 0 auto 68px;
+  padding: 0;
+  max-width: 860px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.about-stop {
+  display: flex;
+  background: var(--card-edge);
+  border-radius: 16px;
+  overflow: hidden;
+}
+.about-stop-media {
+  flex: 0 0 40%;
+  display: flex;
+  gap: 3px;
+  background: var(--card-edge);
+}
+.about-stop-media img {
+  width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.about-stop-media.is-pair img {
+  width: 50%;
+}
+.about-stop-text {
+  flex: 1;
+  padding: 22px 24px 24px;
+}
+.about-stop-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  background: var(--jsa-red);
+  color: #fff;
+  font-family: var(--heading);
+  font-size: 13px;
+}
+.about-stop-text h3 {
+  margin: 0 0 8px;
+  font-family: var(--heading);
+  color: var(--text-h);
+  font-size: clamp(17px, 2.6vw, 21px);
+  line-height: 1.25;
+}
+.about-stop-text p {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(13px, 2.1vw, 15px);
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .about-stop {
+    flex-direction: column;
+  }
+  .about-stop-media {
+    flex: none;
+    height: 190px;
+  }
+}
+
+/* --- activity tiles --- */
+.about-tiles {
+  list-style: none;
+  margin: 0 auto 72px;
+  padding: 0;
+  max-width: 780px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+.about-tile {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 16px;
+  background: var(--card-edge);
+  border-radius: 999px;
+  color: var(--text-h);
+  font-size: clamp(13px, 2vw, 15px);
+  white-space: nowrap;
+}
+.about-tile-emoji {
+  font-size: 1.2em;
+  line-height: 1;
+}
+
+/* --- undoukai spotlight --- */
+.about-spotlight {
+  position: relative;
+  max-width: 1000px;
+  min-height: 380px;
+  margin: 0 auto 56px;
+  border-radius: 18px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.about-spotlight-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-spotlight::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(6, 3, 6, 0.95) 0%,
+    rgba(6, 3, 6, 0.8) 22%,
+    rgba(6, 3, 6, 0.34) 52%,
+    rgba(6, 3, 6, 0.06) 82%
+  );
+}
+.about-spotlight-text {
+  position: relative;
+  z-index: 1;
+  max-width: 580px;
+  padding: 22px 28px 24px;
+  color: #fff;
+}
+.about-spotlight-text h3 {
+  margin: 0 0 6px;
+  font-family: var(--heading);
+  font-size: clamp(22px, 4.4vw, 32px);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+}
+.about-spotlight-text p {
+  margin: 0;
+  font-size: clamp(13px, 2.1vw, 15px);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+}
+
+/* keep display type readable in Japanese (var(--heading) is Latin-only) */
+:root:lang(ja) .about-title,
+:root:lang(ja) .about-subhead,
+:root:lang(ja) .about-stop-text h3,
+:root:lang(ja) .about-spotlight-text h3 {
+  font-family: 'Sawarabi Gothic', sans-serif;
+}

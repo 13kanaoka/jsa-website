@@ -19,6 +19,39 @@ export const translations = {
       title: 'Meet your {semester} board!',
       pickerLabel: 'Select a board term',
     },
+    about: {
+      title: 'What is JSA?',
+      lede: 'A home away from home for Japanese students — and an open door into Japanese culture for everyone.',
+      storyTitle: 'How we got here',
+      story: [
+        {
+          heading: 'Before it had a name',
+          body: 'Long before JSA was an official club, Mr. Misumi — a CSUN staff member — made a point of checking in on the Japanese exchange students on campus. The care he and his wife showed students far from home is still at the heart of JSA today.',
+        },
+        {
+          heading: 'A club is born',
+          body: "Mr. Misumi met a Japanese-American freshman just starting in CSUN's engineering department. More than ten years ago, that student — our founder, Tatsuro Kajioka — turned the community into an official CSUN club.",
+        },
+        {
+          heading: 'JSA today',
+          body: 'The mission continues: a taste of home for Japanese exchange students, and an open door for anyone curious about Japanese language or culture.',
+        },
+      ],
+      activitiesTitle: 'Beyond the monthly meetings',
+      activities: [
+        { emoji: '🎤', label: 'Karaoke nights' },
+        { emoji: '🍖', label: 'Barbecues' },
+        { emoji: '🎬', label: 'Movie nights' },
+        { emoji: '🎮', label: 'Smash Bros' },
+        { emoji: '🖌️', label: 'Calligraphy' },
+        { emoji: '📄', label: 'Origami' },
+        { emoji: '🏮', label: 'Paper lanterns' },
+        { emoji: '⛩️', label: 'Obon & Setsubun' },
+        { emoji: '🎉', label: 'Semester parties' },
+      ],
+      undoukaiTitle: 'Undoukai',
+      undoukaiBody: 'Every April, JSA clubs from across Southern California meet on the beach to compete in a classic Japanese field games tournament.',
+    },
     faq: {
       title: 'Frequently Asked Questions',
       items: [
@@ -81,6 +114,39 @@ export const translations = {
     board: {
       title: '{semester}の役員を紹介！',
       pickerLabel: '期を選択',
+    },
+    about: {
+      title: 'JSAとは？',
+      lede: '日本人学生にとっての「第二の我が家」。そして、誰にとっても日本文化への入り口。',
+      storyTitle: 'ここに至るまで',
+      story: [
+        {
+          heading: '名前がつく前から',
+          body: 'JSAが正式なクラブになるずっと前から、CSUNの職員だった三隅さんは、キャンパスにいる日本人留学生を気にかけ、声をかけ続けていました。三隅さんご夫妻が、故郷を離れた学生たちに注いだ思いやりは、今もJSAの中心にあります。',
+        },
+        {
+          heading: 'クラブの誕生',
+          body: '三隅さんは、CSUNの工学部に入学したばかりの日系アメリカ人の新入生と出会います。10年以上前、その学生——JSA創設者の梶岡達郎——が、そのつながりを正式なCSUNのクラブへと育てました。',
+        },
+        {
+          heading: '今のJSA',
+          body: 'その思いは今も受け継がれています。日本人留学生には故郷の味を、日本語や日本文化に興味のある人には——どんなバックグラウンドでも——開かれた入り口を。',
+        },
+      ],
+      activitiesTitle: '毎月のミーティング以外にも',
+      activities: [
+        { emoji: '🎤', label: 'カラオケ' },
+        { emoji: '🍖', label: 'バーベキュー' },
+        { emoji: '🎬', label: '映画ナイト' },
+        { emoji: '🎮', label: 'スマブラ' },
+        { emoji: '🖌️', label: '書道' },
+        { emoji: '📄', label: '折り紙' },
+        { emoji: '🏮', label: '提灯づくり' },
+        { emoji: '⛩️', label: 'お盆・節分' },
+        { emoji: '🎉', label: '学期パーティー' },
+      ],
+      undoukaiTitle: '運動会',
+      undoukaiBody: '毎年4月、南カリフォルニア各地のJSAがビーチに集まり、日本の伝統的な運動会競技のトーナメントで競い合います。',
     },
     faq: {
       title: 'よくある質問',

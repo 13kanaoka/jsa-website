@@ -16,7 +16,7 @@
   --card-edge: color-mix(in srgb, var(--text-h) 11%, transparent);
   --name-edge: color-mix(in srgb, var(--text-h) 20%, transparent);
 
-  --sans: 'Zen Antique', sans-serif;
+  --sans: 'Sawarabi Gothic', sans-serif;
   --heading: 'Graduate', sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
