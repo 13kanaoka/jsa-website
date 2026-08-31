@@ -57,6 +57,21 @@ const RAW = [
     ],
   },
   {
+    id: 'spring25', season: 'spring', year: 2025,
+    members: [
+      { file: 'ivan-president.jpg', nameEn: 'Ivan Jarquin', nameJa: 'ハルキン アイヴァン' },
+      { file: 'karyo-sugimoto-vp.jpg', nameJa: '杉本 佳崚' },
+      { file: 'asahi-kemmotsu-secretary.jpg', nameJa: '剣持 朝陽' },
+      { file: 'ace-tani-treasurer.jpg', nameJa: '谷 衛守' },
+      { file: 'matt-rohde-public-relations.jpg', nameJa: 'ローディー 眞杜' },
+      { file: 'yuya-uchida-marketing.jpg', nameJa: '内田 裕也' },
+      { file: 'annette-robertson-graphic-designer.jpg', nameJa: 'ロバートソン アネット' },
+      { file: 'damian-nava-content-creator.jpg', nameJa: 'ナバ ダミアン' },
+      { file: 'vincenzo-escobar-content-creation.jpg', nameJa: 'エスコバル ビンチェンゾ' },
+      { file: 'naoto-yamagishi-event-coordinator.jpg', nameJa: '山岸 直人' },
+    ],
+  },
+  {
     id: 'fall24', season: 'fall', year: 2024,
     members: [
       { file: 'ivan-jarquin-president.jpg', nameJa: 'ハルキン アイヴァン',
