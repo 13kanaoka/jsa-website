@@ -2,13 +2,13 @@ import { Analytics } from "@vercel/analytics/react"
 
 import Header from './components/Header'
 import Home from './pages/home-page/Home'
-import About from './pages/about-page/About'
+import Board from './pages/board-page/Board'
 
 function App() {
   return <>
     <Header />
     <Home />
-    <About />
+    <Board />
     <Analytics />
   </>
 }
