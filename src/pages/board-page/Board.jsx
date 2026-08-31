@@ -63,7 +63,7 @@ function Board() {
           const name = lang === 'ja' && m.nameJa ? m.nameJa : m.nameEn
           const position = m.position ? t(`positions.${m.position}`) : ''
           const fact = (lang === 'ja' && m.funFactJa ? m.funFactJa : m.funFactEn)
-            || (lang === 'ja' ? '（準備中）' : 'Fun fact coming soon!')
+            || (lang === 'ja' ? '今回のファンファクトはなし :(' : 'no fun fact this time :(')
 
           return (
             <li key={id} className="board-cell">

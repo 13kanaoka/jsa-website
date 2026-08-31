@@ -1,6 +1,9 @@
 .board {
   background: var(--bg);
   padding: 56px 24px 72px;
+  /* soft edges, a hair off the background; theme-aware */
+  --card-edge: color-mix(in srgb, var(--text-h) 11%, transparent);
+  --name-edge: color-mix(in srgb, var(--text-h) 20%, transparent);
 }
 
 /* ---- title + inline term dropdown ---- */
@@ -72,14 +75,14 @@
   --photo: clamp(96px, 28vw, 128px);
   --photo-sm: calc(var(--photo) * 0.42);
   width: clamp(136px, 40vw, 172px);
-  min-height: clamp(140px, 38vw, 224px); /* small reserve so rows don't jump when a fact opens */
+  min-height: clamp(224px, 60vw, 258px); /* every card the same height as the tallest */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 6px;
   padding: 12px 8px 16px;
   border: 0;
-  background: transparent;
+  background: var(--card-edge);
   color: inherit;
   font: inherit;
   text-align: center;
@@ -113,6 +116,9 @@
 
 .member-name {
   margin-top: 4px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  background: var(--name-edge);
   font-family: 'Sawarabi Gothic', sans-serif;
   color: var(--text-h);
   font-size: clamp(13px, 3.6vw, 16px);
@@ -122,6 +128,7 @@
   font-size: clamp(11px, 3vw, 13px);
   letter-spacing: 0.3px;
   color: var(--text);
+  white-space: nowrap; /* keep positions on one line so every card is the same height */
 }
 .member-fact {
   font-size: 13px;
