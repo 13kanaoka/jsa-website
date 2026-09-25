@@ -61,7 +61,7 @@ function Board() {
           const id = `${term.id}-${i}`
           const isActive = activeId === id
           const name = lang === 'ja' && m.nameJa ? m.nameJa : m.nameEn
-          const position = m.position ? t(`positions.${m.position}`) : ''
+          const position = lang === 'ja' ? m.positionJa : m.positionEn
           const fact = (lang === 'ja' && m.funFactJa ? m.funFactJa : m.funFactEn)
             || (lang === 'ja' ? '今回のファンファクトはなし :(' : 'no fun fact this time :(')
 
