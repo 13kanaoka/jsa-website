@@ -73,16 +73,20 @@ function Board() {
                 aria-pressed={isActive}
                 onClick={() => setActiveId(isActive ? null : id)}
               >
-                <span className="member-photo-wrap">
-                  {m.photo
-                    ? <img className="member-photo" src={m.photo} alt="" loading="lazy" />
-                    : <span className="member-photo member-photo--missing" aria-hidden="true" />}
+                <span className="member-head">
+                  <span className="member-photo-wrap">
+                    {m.photo
+                      ? <img className="member-photo" src={m.photo} alt="" loading="lazy" />
+                      : <span className="member-photo member-photo--missing" aria-hidden="true" />}
+                  </span>
+                  <span className="member-text">
+                    <span className="member-name">{name}</span>
+                    {position && <span className="member-position">{position}</span>}
+                  </span>
                 </span>
-                <span className="member-text">
-                  <span className="member-name">{name}</span>
-                  {position && <span className="member-position">{position}</span>}
+                <span className="member-fact">
+                  <span className="member-fact-inner">{fact}</span>
                 </span>
-                <span className="member-fact">{fact}</span>
               </button>
             </li>
           )

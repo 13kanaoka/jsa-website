@@ -71,8 +71,9 @@
 .member {
   --photo: clamp(96px, 28vw, 128px);
   --photo-sm: calc(var(--photo) * 0.42);
+  --card-min-h: clamp(224px, 60vw, 258px);
   width: clamp(136px, 40vw, 172px);
-  min-height: clamp(224px, 60vw, 258px); /* every card the same height as the tallest */
+  min-height: var(--card-min-h); /* every card the same height as the tallest */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -90,6 +91,21 @@
 .member:focus-visible {
   outline: 3px solid var(--accent);
   outline-offset: 2px;
+}
+
+/* Photo + name/position, as a unit: its own min-height creates the room
+   that centers the name at rest, and collapses to snug-under-photo on
+   hover/active — independently of whatever the fun fact is doing, so the
+   two never fight over the same leftover space (that fighting is what
+   caused the card to overshoot its height and the name to jump). */
+.member-head {
+  min-height: calc(var(--card-min-h) - 34px); /* card min-height minus its own padding + the gap to the fact */
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  transition: min-height 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .member-photo-wrap {
@@ -112,8 +128,9 @@
 }
 
 .member-text {
-  flex: 1;
-  min-height: 0;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -136,17 +153,34 @@
   color: var(--text);
   white-space: nowrap; /* keep positions on one line so every card is the same height */
 }
+/* Revealed with grid-template-rows 0fr -> 1fr rather than max-height:
+   it tracks the fact's real content height exactly, with no arbitrary
+   ceiling to coast through first — that coasting was what let the head
+   (regrowing on its own, real timeline) get ahead of it and overshoot
+   the card's height. */
 .member-fact {
+  display: grid;
+  grid-template-rows: 0fr;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  min-height: 0;
+  opacity: 0;
+  transition:
+    grid-template-rows 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+    opacity 0.25s ease,
+    margin-top 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+    flex-grow 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.member-fact-inner {
   font-size: 13px;
   line-height: 1.45;
   color: var(--text);
-  max-height: 0;
-  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 0;
   overflow: hidden;
-  transition:
-    max-height 0.35s ease,
-    opacity 0.25s ease,
-    margin-top 0.35s ease;
 }
 
 /* ---- active: tapped / click-pinned ---- */
@@ -157,16 +191,12 @@
   width: var(--photo-sm);
   height: var(--photo-sm);
 }
-.member.is-active .member-text {
-  flex: none;
+.member.is-active .member-head {
+  min-height: 0;
 }
 .member.is-active .member-fact {
-  flex: 1;
-  min-height: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-height: 220px;
+  grid-template-rows: 1fr;
+  flex-grow: 1;
   opacity: 1;
   margin-top: 6px;
 }
@@ -183,16 +213,12 @@
     width: var(--photo-sm);
     height: var(--photo-sm);
   }
-  .member:hover .member-text {
-    flex: none;
+  .member:hover .member-head {
+    min-height: 0;
   }
   .member:hover .member-fact {
-    flex: 1;
-    min-height: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-height: 220px;
+    grid-template-rows: 1fr;
+    flex-grow: 1;
     opacity: 1;
     margin-top: 6px;
   }
@@ -201,6 +227,7 @@
 @media (prefers-reduced-motion: reduce) {
   .member-photo,
   .member-photo-wrap,
+  .member-head,
   .member-fact {
     transition: none;
   }
