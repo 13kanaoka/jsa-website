@@ -78,8 +78,10 @@ function Board() {
                     ? <img className="member-photo" src={m.photo} alt="" loading="lazy" />
                     : <span className="member-photo member-photo--missing" aria-hidden="true" />}
                 </span>
-                <span className="member-name">{name}</span>
-                {position && <span className="member-position">{position}</span>}
+                <span className="member-text">
+                  <span className="member-name">{name}</span>
+                  {position && <span className="member-position">{position}</span>}
+                </span>
                 <span className="member-fact">{fact}</span>
               </button>
             </li>
