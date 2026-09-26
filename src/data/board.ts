@@ -16,12 +16,54 @@
 //   funFactEn   - shown when a card is hovered / tapped
 //   funFactJa   - Japanese fun fact; falls back to funFactEn when blank
 
+export type Position =
+  | 'president' | 'vp' | 'secretary' | 'treasurer' | 'public-relations'
+  | 'marketing' | 'graphic-designer' | 'content-creator' | 'content-creation'
+  | 'media' | 'photography' | 'event-logistics' | 'event-planner'
+  | 'event-coordinator' | 'advisor'
+
+interface RawMember {
+  file: string
+  nameEn: string
+  nameJa: string
+  position: Position
+  positionEn: string
+  positionJa: string
+  funFactEn?: string
+  funFactJa?: string
+}
+
+interface RawTerm {
+  id: string
+  season: 'fall' | 'spring'
+  year: number
+  members: RawMember[]
+}
+
+export interface BoardMember {
+  photo: string | null
+  nameEn: string
+  nameJa: string
+  position: Position
+  positionEn: string
+  positionJa: string
+  funFactEn: string
+  funFactJa: string
+}
+
+export interface BoardTerm {
+  id: string
+  season: 'fall' | 'spring'
+  year: number
+  members: BoardMember[]
+}
+
 const photos = import.meta.glob(
   '../assets/board-photos/*/*.{png,jpg,jpeg,PNG,JPG,JPEG}',
   { eager: true, import: 'default' },
-)
+) as Record<string, string>
 
-function resolvePhoto(folder, file) {
+function resolvePhoto(folder: string, file: string): string | null {
   const url = photos[`../assets/board-photos/${folder}/${file}`]
   if (!url && import.meta.env.DEV) {
     console.warn(`[board] no photo found for ${folder}/${file}`)
@@ -29,7 +71,7 @@ function resolvePhoto(folder, file) {
   return url ?? null
 }
 
-const RAW = [
+const RAW: RawTerm[] = [
   {
     id: 'fall26',
     season: 'fall',
@@ -887,7 +929,7 @@ const RAW = [
   },
 ]
 
-export const board = RAW.map((term) => ({
+export const board: BoardTerm[] = RAW.map((term) => ({
   id: term.id,
   season: term.season,
   year: term.year,

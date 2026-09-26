@@ -4,7 +4,7 @@ import { useLang } from '../../i18n/LanguageContext'
 
 // intrinsic pixel size (w, h) of each collage photo — drives its tile shape below.
 // Add a photo? add its size here; anything missing falls back to a 1x1 tile.
-const DIMS = {
+const DIMS: Record<string, [number, number]> = {
   '01-barbecue-group': [900, 675],
   '02-calligraphy': [900, 672],
   '03-halloween-1': [900, 600],
@@ -30,7 +30,7 @@ const DIMS = {
 }
 
 // these render once at 2x2 as visual anchors
-const BIG = new Set([
+const BIG: Set<string> = new Set([
   '01-barbecue-group',
   '02-calligraphy',
   '06-meet-the-clubs',
@@ -41,7 +41,7 @@ const BIG = new Set([
 ])
 
 // choose a tile shape from the photo's aspect ratio
-function tileClass(name, anchor) {
+function tileClass(name: string, anchor: boolean) {
   if (anchor && BIG.has(name)) return 'tile-2x2'
   const [w, h] = DIMS[name] ?? [1, 1]
   const r = w / h
@@ -50,12 +50,17 @@ function tileClass(name, anchor) {
   return '' // ~square -> 1x1
 }
 
-const tiles = import.meta.glob('../../assets/collage/*.jpg', { eager: true, import: 'default' })
-const PHOTOS = Object.entries(tiles)
-  .sort(([a], [b]) => a.localeCompare(b))
-  .map(([path, src]) => ({ src, name: path.split('/').pop().replace('.jpg', '') }))
+interface Photo {
+  src: string
+  name: string
+}
 
-const rot = (arr, n) => [...arr.slice(n), ...arr.slice(0, n)]
+const tiles = import.meta.glob('../../assets/collage/*.jpg', { eager: true, import: 'default' }) as Record<string, string>
+const PHOTOS: Photo[] = Object.entries(tiles)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([path, src]) => ({ src, name: (path.split('/').pop() ?? path).replace('.jpg', '') }))
+
+const rot = <T,>(arr: T[], n: number) => [...arr.slice(n), ...arr.slice(0, n)]
 // small filler tiles: the photo set repeated (each copy rotated so no photo sits
 // next to a copy of itself) to cover large screens. Overflow past the hero is clipped.
 const FILLER = [

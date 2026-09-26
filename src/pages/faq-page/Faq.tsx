@@ -2,7 +2,7 @@ import './Faq.css'
 import { useLang } from '../../i18n/LanguageContext'
 
 // render *emphasis* markers in an answer as <em>
-function renderAnswer(text) {
+function renderAnswer(text: string) {
   return text.split(/(\*[^*]+\*)/g).map((seg, i) =>
     seg.length > 2 && seg.startsWith('*') && seg.endsWith('*')
       ? <em key={i}>{seg.slice(1, -1)}</em>

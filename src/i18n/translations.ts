@@ -1,4 +1,58 @@
-export const translations = {
+export interface StoryStop {
+  heading: string
+  body: string
+}
+
+export interface ActivityItem {
+  emoji: string
+  label: string
+}
+
+export interface FaqItem {
+  q: string
+  a: string
+}
+
+interface LanguageStrings {
+  meta: { title: string }
+  ui: { switchLanguage: string }
+  header: { logoAlt: string }
+  hero: { kanji: string; title: string; tagline: string; logoAlt: string }
+  board: { title: string; pickerLabel: string }
+  membership: {
+    title: string
+    cardTitle: string
+    nameLabel: string
+    emailLabel: string
+    submit: string
+    submitting: string
+    done: string
+    error: string
+    errorDuplicate: string
+    payTitle: string
+    payNote: string
+    officerTitle: string
+    officerNote: string
+  }
+  about: {
+    title: string
+    lede: string
+    storyTitle: string
+    story: StoryStop[]
+    activitiesTitle: string
+    activities: ActivityItem[]
+    undoukaiTitle: string
+    undoukaiBody: string
+  }
+  faq: {
+    title: string
+    items: FaqItem[]
+  }
+}
+
+export type Lang = 'en' | 'ja'
+
+export const translations: Record<Lang, LanguageStrings> = {
   en: {
     meta: {
       title: 'CSUN JSA — Japanese Student Association',
