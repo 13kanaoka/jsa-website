@@ -120,7 +120,7 @@ const RAW: RawTerm[] = [
       {
         file: 'jacob-cha-pr.png',
         nameEn: 'Jacob Cha',
-        nameJa: 'チャー ジェコブ',
+        nameJa: 'チャー ジェイコブ',
         position: 'public-relations',
         positionEn: 'Public Relations',
         positionJa: '広報',
