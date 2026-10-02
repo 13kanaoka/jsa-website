@@ -90,7 +90,7 @@ const RAW: RawTerm[] = [
       {
         file: 'yuri-kimura-vp.png',
         nameEn: 'Yuri Kimura',
-        nameJa: '木村 由梨',
+        nameJa: '木村 優里',
         position: 'vp',
         positionEn: 'Vice President',
         positionJa: '副会長',
@@ -110,7 +110,7 @@ const RAW: RawTerm[] = [
       {
         file: 'hikaru-hidaka-treasurer.png',
         nameEn: 'Hikaru Hidaka',
-        nameJa: '日高 光',
+        nameJa: '日高 ひかる',
         position: 'treasurer',
         positionEn: 'Treasurer',
         positionJa: '会計',
@@ -150,7 +150,7 @@ const RAW: RawTerm[] = [
       {
         file: 'keishin-ueda-event-coordinator.png',
         nameEn: 'Keishin Ueda',
-        nameJa: '上田 敬真',
+        nameJa: '上田 佳真',
         position: 'event-coordinator',
         positionEn: 'Event Coordinator',
         positionJa: 'イベント調整',
