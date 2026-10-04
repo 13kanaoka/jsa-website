@@ -78,7 +78,7 @@ const RAW = [
       {
         file: 'jacob-cha-pr.png',
         nameEn: 'Jacob Cha',
-        nameJa: 'チャー ジェイコブ',
+        nameJa: 'チャ ジェイコブ',
         position: 'public-relations',
         positionEn: 'Public Relations',
         positionJa: '広報',
@@ -88,7 +88,7 @@ const RAW = [
       {
         file: 'hinata-watanabe-pr.png',
         nameEn: 'Hinata Watanabe',
-        nameJa: '渡辺 陽向',
+        nameJa: '渡邊 ひなた',
         position: 'public-relations',
         positionEn: 'Public Relations',
         positionJa: '広報',
