@@ -30,7 +30,7 @@ export const translations = {
       error: 'Something went wrong — double-check your details and try again.',
       errorDuplicate: 'That email is already on the list.',
       payTitle: 'Membership fee — $12 / semester',
-      payNote: "We conduct payments in person through Zelle or cash! Come to an event and we'll square things away there :)\n\nSign up with a friend the price drops to $10 / person!",
+      payNote: "We conduct payments in person through Zelle or cash! Come to an event and we'll square things away there :)\n\nSign up with a friend and the price drops to $10 / person!",
       officerTitle: 'Board Officer Application',
       officerNote: 'Currently unavailable — check back in December!',
     },
