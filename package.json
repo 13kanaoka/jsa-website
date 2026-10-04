@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
-    "typecheck": "tsc -b",
+    "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview",
     "prepare": "husky"
@@ -23,10 +22,9 @@
     "husky": "^9.1.7",
     "lint-staged": "^17.5.1",
     "oxlint": "^1.75.0",
-    "typescript": "^7.0.2",
     "vite": "^8.2.0"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "oxlint"
+    "*.{js,jsx}": "oxlint"
   }
 }

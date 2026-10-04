@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from 'react'
+import { useState } from 'react'
 import './Membership.css'
 import { useLang } from '../../i18n/LanguageContext'
 
@@ -8,22 +8,15 @@ const SIGNUP_URL =
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
-type Status = 'idle' | 'submitting' | 'success' | 'duplicate' | 'error'
-
-interface SignupResponse {
-  ok?: boolean
-  error?: string
-}
-
 function Membership() {
   const { t } = useLang()
 
   const [fullName, setFullName] = useState('')
   const [email, setEmail] = useState('')
   const [company, setCompany] = useState('') // honeypot
-  const [status, setStatus] = useState<Status>('idle')
+  const [status, setStatus] = useState('idle') // idle | submitting | success | duplicate | error
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e) {
     e.preventDefault()
     if (company.trim()) return // a bot filled the hidden field — drop it silently
 
@@ -43,7 +36,7 @@ function Membership() {
         method: 'POST',
         body: new URLSearchParams({ fullName: name, email: mail }),
       })
-      const data: SignupResponse = await res.json()
+      const data = await res.json()
       if (data.ok) setStatus('success')
       else if (data.error === 'duplicate') setStatus('duplicate')
       else setStatus('error')

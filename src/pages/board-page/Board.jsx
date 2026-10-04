@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import './Board.css'
 import { useLang } from '../../i18n/LanguageContext'
-import { board, type BoardTerm, type BoardMember, type Position } from '../../data/board'
+import { board } from '../../data/board'
 
-const POSITION_ORDER: Position[] = [
+const POSITION_ORDER = [
   'president', 'vp', 'secretary', 'treasurer',
   'public-relations', 'marketing', 'graphic-designer', 'content-creator', 'content-creation',
   'media', 'photography',
@@ -11,20 +11,20 @@ const POSITION_ORDER: Position[] = [
   'advisor',
 ]
 
-function semesterLabel(term: BoardTerm, lang: string) {
+function semesterLabel(term, lang) {
   if (lang === 'ja') return `${term.year}年${term.season === 'fall' ? '秋' : '春'}`
   return `${term.season === 'fall' ? 'Fall' : 'Spring'} '${String(term.year).slice(2)}`
 }
 
-function byRole(a: BoardMember, b: BoardMember) {
-  const rank = (p: Position) => (POSITION_ORDER.indexOf(p) + 1 || 99)
+function byRole(a, b) {
+  const rank = (p) => (POSITION_ORDER.indexOf(p) + 1 || 99)
   return rank(a.position) - rank(b.position)
 }
 
 function Board() {
   const { t, lang } = useLang()
   const [termId, setTermId] = useState(board[0].id)
-  const [activeId, setActiveId] = useState<string | null>(null)
+  const [activeId, setActiveId] = useState(null)
 
   const term = board.find((s) => s.id === termId) ?? board[0]
   const members = [...term.members].sort(byRole)
