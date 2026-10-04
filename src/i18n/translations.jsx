@@ -120,7 +120,7 @@ export const translations = {
       emailLabel: 'メールアドレス',
       submit: '登録する',
       submitting: '送信中…',
-      done: '登録が完了しました！会費については、最初のゼネラルミーティングのあとにご連絡します。',
+      done: '登録が完了しました！',
       error: '問題が発生しました。入力内容を確認して、もう一度お試しください。',
       errorDuplicate: 'そのメールアドレスはすでに登録されています。',
       payTitle: '会費 — 1学期 $12',
