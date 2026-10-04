@@ -26,11 +26,11 @@ export const translations = {
       emailLabel: 'Email',
       submit: 'Sign me up',
       submitting: 'Sending…',
-      done: "You're on the list! We'll reach out about membership after the first General Meeting.",
+      done: "You're on the list!",
       error: 'Something went wrong — double-check your details and try again.',
       errorDuplicate: 'That email is already on the list.',
-      payTitle: 'Membership fee — $15 / semester',
-      payNote: 'Payment opens after our first General Meeting. Sign up now and we\'ll follow up about the $15 then.',
+      payTitle: 'Membership fee — $12 / semester',
+      payNote: "We conduct payments in person through Zelle or cash! Come to an event and we'll square things away there :)\n\nSign up with a friend the price drops to $10 / person!",
       officerTitle: 'Board Officer Application',
       officerNote: 'Currently unavailable — check back in December!',
     },
@@ -76,7 +76,7 @@ export const translations = {
         },
         {
           q: 'Do I need to pay to be a member?',
-          a: 'We have a per-semester membership fee of $15. This money *never* goes to any board members — it is entirely so we can fund our events and give you awesome activities, free food, and the resources to give back to our members as much as possible.',
+          a: 'We have a per-semester membership fee of $12. This money *never* goes to any board members — it is entirely so we can fund our events and give you awesome activities, free food, and the resources to give back to our members as much as possible.',
         },
         {
           q: 'How often do you hold events?',
@@ -123,8 +123,8 @@ export const translations = {
       done: '登録が完了しました！会費については、最初のゼネラルミーティングのあとにご連絡します。',
       error: '問題が発生しました。入力内容を確認して、もう一度お試しください。',
       errorDuplicate: 'そのメールアドレスはすでに登録されています。',
-      payTitle: '会費 — 1学期 $15',
-      payNote: 'お支払いは最初のゼネラルミーティングのあとに開始します。今すぐ登録すれば、そのときに $15 についてご案内します。',
+      payTitle: '会費 — 1学期 $12',
+      payNote: 'お支払いはZelleまたは現金で、対面にて承ります！イベントにお越しいただければ、その場で精算しましょう :)\n\nお友達と一緒にお申し込みいただくと、お一人あたり$10に割引になります！',
       officerTitle: '役員応募',
       officerNote: '現在受付停止中です — 12月にまたご確認ください！',
     },
@@ -170,7 +170,7 @@ export const translations = {
         },
         {
           q: 'メンバーになるにはお金がかかりますか？',
-          a: '学期ごとに15ドルの会費があります。このお金が役員に渡ることは*一切*ありません。すべて、イベントの運営や、楽しいアクティビティ・無料の食事、そしてメンバーにできる限り還元するためのリソースに使われます。',
+          a: '学期ごとに12ドルの会費があります。このお金が役員に渡ることは*一切*ありません。すべて、イベントの運営や、楽しいアクティビティ・無料の食事、そしてメンバーにできる限り還元するためのリソースに使われます。',
         },
         {
           q: 'イベントはどのくらいの頻度で開催していますか？',
