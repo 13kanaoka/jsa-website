@@ -18,7 +18,7 @@ function Membership() {
 
   async function handleSubmit(e) {
     e.preventDefault()
-    if (company.trim()) return // a bot filled the hidden field — drop it silently
+    if (company.trim()) return
 
     const name = fullName.trim()
     const mail = email.trim()
